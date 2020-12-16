@@ -1,4 +1,4 @@
-# Google Sign-In
+# Facebook Sign-In
 
 Using this module, users can directly log in or register with their Facebook credentials at this HumHub installation. 
 A new button "Facebook" will appear on the login page.
