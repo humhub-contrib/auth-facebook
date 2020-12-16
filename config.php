@@ -3,10 +3,10 @@
 use humhub\modules\user\authclient\Collection;
 
 return [
-    'id' => 'auth-google',
-    'class' => 'humhubContrib\auth\google\Module',
-    'namespace' => 'humhubContrib\auth\google',
+    'id' => 'auth-facebook',
+    'class' => 'humhubContrib\auth\facebook\Module',
+    'namespace' => 'humhubContrib\auth\facebook',
     'events' => [
-        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\google\Events', 'onAuthClientCollectionInit']]
+        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\facebook\Events', 'onAuthClientCollectionInit']]
     ],
 ];

@@ -1,11 +1,11 @@
 <?php
 
-namespace humhubContrib\auth\google\models;
+namespace humhubContrib\auth\facebook\models;
 
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;
-use humhubContrib\auth\google\Module;
+use humhubContrib\auth\facebook\Module;
 
 /**
  * The module configuration model
@@ -18,14 +18,14 @@ class ConfigureForm extends Model
     public $enabled;
 
     /**
-     * @var string the client id provided by Google
+     * @var string the app id provided by Facebook
      */
-    public $clientId;
+    public $appId;
 
     /**
-     * @var string the client secret provided by Google
+     * @var string the app secret provided by Facebook
      */
-    public $clientSecret;
+    public $appSecret;
 
     /**
      * @var string readonly
@@ -38,7 +38,7 @@ class ConfigureForm extends Model
     public function rules()
     {
         return [
-            [['clientId', 'clientSecret'], 'required'],
+            [['appId', 'appSecret'], 'required'],
             [['enabled'], 'boolean'],
         ];
     }
@@ -49,9 +49,9 @@ class ConfigureForm extends Model
     public function attributeLabels()
     {
         return [
-            'enabled' => Yii::t('AuthGoogleModule.base', 'Enabled'),
-            'clientId' => Yii::t('AuthGoogleModule.base', 'Client ID'),
-            'clientSecret' => Yii::t('AuthGoogleModule.base', 'Client secret'),
+            'enabled' => Yii::t('AuthFacebookModule.base', 'Enabled'),
+            'appId' => Yii::t('AuthFacebookModule.base', 'App ID'),
+            'appSecret' => Yii::t('AuthFacebookModule.base', 'App secret'),
         ];
     }
 
@@ -75,10 +75,10 @@ class ConfigureForm extends Model
         $settings = $module->settings;
 
         $this->enabled = (boolean)$settings->get('enabled');
-        $this->clientId = $settings->get('clientId');
-        $this->clientSecret = $settings->get('clientSecret');
+        $this->appId = $settings->get('appId');
+        $this->appSecret = $settings->get('appSecret');
 
-        $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'google'], true);
+        $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'facebook'], true);
     }
 
     /**
@@ -87,11 +87,11 @@ class ConfigureForm extends Model
     public function saveSettings()
     {
         /** @var Module $module */
-        $module = Yii::$app->getModule('auth-google');
+        $module = Yii::$app->getModule('auth-facebook');
 
         $module->settings->set('enabled', (boolean)$this->enabled);
-        $module->settings->set('clientId', $this->clientId);
-        $module->settings->set('clientSecret', $this->clientSecret);
+        $module->settings->set('appId', $this->appId);
+        $module->settings->set('appSecret', $this->appSecret);
 
         return true;
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace humhubContrib\auth\google;
+namespace humhubContrib\auth\facebook;
 
 use humhub\components\Event;
 use humhub\modules\user\authclient\Collection;
-use humhubContrib\auth\google\authclient\GoogleAuth;
-use humhubContrib\auth\google\models\ConfigureForm;
+use humhubContrib\auth\facebook\authclient\FacebookAuth;
+use humhubContrib\auth\facebook\models\ConfigureForm;
 
 class Events
 {
@@ -18,10 +18,10 @@ class Events
         $authClientCollection = $event->sender;
 
         if (!empty(ConfigureForm::getInstance()->enabled)) {
-            $authClientCollection->setClient('google', [
-                'class' => GoogleAuth::class,
-                'clientId' => ConfigureForm::getInstance()->clientId,
-                'clientSecret' => ConfigureForm::getInstance()->clientSecret
+            $authClientCollection->setClient('facebook', [
+                'class' => FacebookAuth::class,
+                'appId' => ConfigureForm::getInstance()->appId,
+                'appSecret' => ConfigureForm::getInstance()->appSecret
             ]);
         }
     }

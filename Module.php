@@ -1,6 +1,6 @@
 <?php
 
-namespace humhubContrib\auth\google;
+namespace humhubContrib\auth\facebook;
 
 use yii\helpers\Url;
 
@@ -20,7 +20,7 @@ class Module extends \humhub\components\Module
      */
     public function getConfigUrl()
     {
-        return Url::to(['/auth-google/admin']);
+        return Url::to(['/auth-facebook/admin']);
     }
 
     /**

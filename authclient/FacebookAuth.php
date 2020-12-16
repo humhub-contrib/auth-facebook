@@ -1,13 +1,13 @@
 <?php
 
-namespace humhubContrib\auth\google\authclient;
+namespace humhubContrib\auth\facebook\authclient;
 
-use yii\authclient\clients\Google;
+use yii\authclient\clients\Facebook;
 
 /**
- * Google allows authentication via Google OAuth.
+ * Facebook allows authentication via Facebook OAuth.
  */
-class GoogleAuth extends Google
+class FacebookAuth extends Facebook
 {
 
     /**
@@ -18,7 +18,7 @@ class GoogleAuth extends Google
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-google',
+            'cssIcon' => 'fa fa-facebook',
             'buttonBackgroundColor' => '#e0492f',
         ];
     }
