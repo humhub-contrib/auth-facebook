@@ -20,8 +20,8 @@ class Events
         if (!empty(ConfigureForm::getInstance()->enabled)) {
             $authClientCollection->setClient('facebook', [
                 'class' => FacebookAuth::class,
-                'appId' => ConfigureForm::getInstance()->appId,
-                'appSecret' => ConfigureForm::getInstance()->appSecret
+                'clientId' => ConfigureForm::getInstance()->clientId,
+                'clientSecret' => ConfigureForm::getInstance()->clientSecret
             ]);
         }
     }

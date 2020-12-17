@@ -3,6 +3,7 @@
 namespace humhubContrib\auth\facebook\authclient;
 
 use yii\authclient\clients\Facebook;
+use yii\web\NotFoundHttpException;
 
 /**
  * Facebook allows authentication via Facebook OAuth.
@@ -41,11 +42,13 @@ class FacebookAuth extends Facebook
                 if (!isset($attributes['family_name'])) {
                     return '';
                 }
-
                 return $attributes['family_name'];
             },
             'title' => 'tagline',
             'email' => function ($attributes) {
+                if (empty($attributes['email'])) {
+                    throw new NotFoundHttpException('Could not find E-mail in Facebook account. Set email in facbook account settings.');
+                }
                 return $attributes['email'];
             },
         ];

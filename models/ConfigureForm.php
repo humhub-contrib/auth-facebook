@@ -20,12 +20,12 @@ class ConfigureForm extends Model
     /**
      * @var string the app id provided by Facebook
      */
-    public $appId;
+    public $clientId;
 
     /**
      * @var string the app secret provided by Facebook
      */
-    public $appSecret;
+    public $clientSecret;
 
     /**
      * @var string readonly
@@ -38,7 +38,7 @@ class ConfigureForm extends Model
     public function rules()
     {
         return [
-            [['appId', 'appSecret'], 'required'],
+            [['clientId', 'clientSecret'], 'required'],
             [['enabled'], 'boolean'],
         ];
     }
@@ -50,8 +50,8 @@ class ConfigureForm extends Model
     {
         return [
             'enabled' => Yii::t('AuthFacebookModule.base', 'Enabled'),
-            'appId' => Yii::t('AuthFacebookModule.base', 'App ID'),
-            'appSecret' => Yii::t('AuthFacebookModule.base', 'App secret'),
+            'clientId' => Yii::t('AuthFacebookModule.base', 'Client ID'),
+            'clientSecret' => Yii::t('AuthFacebookModule.base', 'Client secret'),
         ];
     }
 
@@ -70,13 +70,13 @@ class ConfigureForm extends Model
     public function loadSettings()
     {
         /** @var Module $module */
-        $module = Yii::$app->getModule('auth-google');
+        $module = Yii::$app->getModule('auth-facebook');
 
         $settings = $module->settings;
 
         $this->enabled = (boolean)$settings->get('enabled');
-        $this->appId = $settings->get('appId');
-        $this->appSecret = $settings->get('appSecret');
+        $this->clientId = $settings->get('clientId');
+        $this->clientSecret = $settings->get('clientSecret');
 
         $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'facebook'], true);
     }
@@ -90,8 +90,8 @@ class ConfigureForm extends Model
         $module = Yii::$app->getModule('auth-facebook');
 
         $module->settings->set('enabled', (boolean)$this->enabled);
-        $module->settings->set('appId', $this->appId);
-        $module->settings->set('appSecret', $this->appSecret);
+        $module->settings->set('clientId', $this->clientId);
+        $module->settings->set('clientSecret', $this->clientSecret);
 
         return true;
     }

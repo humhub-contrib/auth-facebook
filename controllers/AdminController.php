@@ -1,10 +1,10 @@
 <?php
 
-namespace humhubContrib\auth\google\controllers;
+namespace humhubContrib\auth\facebook\controllers;
 
 use Yii;
 use humhub\modules\admin\components\Controller;
-use humhubContrib\auth\google\models\ConfigureForm;
+use humhubContrib\auth\facebook\models\ConfigureForm;
 
 /**
  * Module configuation
