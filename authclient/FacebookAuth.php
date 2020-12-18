@@ -30,21 +30,27 @@ class FacebookAuth extends Facebook
     protected function defaultNormalizeUserAttributeMap()
     {
         return [
-            'username' => 'displayName',
+            'username' => 'name',
             'firstname' => function ($attributes) {
-                if (!isset($attributes['given_name'])) {
+                if (!isset($attributes['name'])) {
                     return '';
                 }
-
-                return $attributes['given_name'];
+                $parts = mb_split(' ', $attributes['name'], 2);
+                if (isset($parts[0])) {
+                    return $parts[0];
+                }
+                return '';
             },
             'lastname' => function ($attributes) {
-                if (!isset($attributes['family_name'])) {
+                if (!isset($attributes['name'])) {
                     return '';
                 }
-                return $attributes['family_name'];
+                $parts = mb_split(' ', $attributes['name'], 2);
+                if (isset($parts[1])) {
+                    return $parts[1];
+                }
+                return '';
             },
-            'title' => 'tagline',
             'email' => function ($attributes) {
                 if (empty($attributes['email'])) {
                     throw new NotFoundHttpException('Could not find E-mail in Facebook account. Set email in facbook account settings.');

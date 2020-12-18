@@ -5,9 +5,9 @@ A new button "Facebook" will appear on the login page.
 
 ## Configuration
 
-Please follow the [Facebook instructions](https://developers.google.com/identity/protocols/OpenIDConnect#registeringyourapp) to create the required ` OAuth client ID` credentials.
+Please follow the [Facebook instructions](https://www.loginradius.com/blog/async/login-with-facebook/) to create the required ` OAuth client ID` credentials.
 
-Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Google Auth -> Settings`. 
+Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Facebook Auth -> Settings`. 
 This page also displays the `Authorized redirect URI`, which must be inserted in Google in the corresponding field.
 
 
