@@ -7,8 +7,8 @@ A new button "Facebook" will appear on the login page.
 
 Please follow the [Facebook instructions](https://www.loginradius.com/blog/async/login-with-facebook/) to create the required ` OAuth client ID` credentials.
 
-Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Facebook Auth -> Settings`. 
-This page also displays the `Authorized redirect URI`, which must be inserted in Google in the corresponding field.
+Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Facebook Auth -> Configure`. 
+This page also displays the `Authorized redirect URI`, which must be inserted in Facebook in the corresponding field.
 
 
 
