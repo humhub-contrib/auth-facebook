@@ -2,6 +2,7 @@
 
 namespace humhubContrib\auth\facebook\authclient;
 
+use Yii;
 use yii\authclient\clients\Facebook;
 use yii\web\NotFoundHttpException;
 
@@ -53,7 +54,7 @@ class FacebookAuth extends Facebook
             },
             'email' => function ($attributes) {
                 if (empty($attributes['email'])) {
-                    throw new NotFoundHttpException('Could not find E-mail in Facebook account. Set email in facbook account settings.');
+                    throw new NotFoundHttpException(Yii::t('AuthFacebookModule.base', 'Please add a valid email address to your Facebook account to be able to proceed.'));
                 }
                 return $attributes['email'];
             },
