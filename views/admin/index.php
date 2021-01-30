@@ -13,7 +13,7 @@ use yii\helpers\Html;
 
         <div class="panel-body">
             <p>
-                <?= Html::a(Yii::t('AuthFacebookModule.base', 'Facebook Documentation'), 'https://www.loginradius.com/blog/async/login-with-facebook/', ['class' => 'btn btn-primary pull-right btn-sm', 'target' => '_blank']); ?>
+                <?= Html::a(Yii::t('AuthFacebookModule.base', 'Facebook Documentation'), 'https://developers.facebook.com/docs/facebook-login/overview', ['class' => 'btn btn-primary pull-right btn-sm', 'target' => '_blank']); ?>
                 <?= Yii::t('AuthFacebookModule.base', 'Please follow the Facebook instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
             </p>
