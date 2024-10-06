@@ -1,10 +1,10 @@
 {
     "id": "auth-facebook",
     "name": "Facebook Sign-In",
-    "description": "Integrating Facebook Sign-In (OAuth 2.0).",
+    "description": "Integrating Facebook Sign-In (OAuth 2.0) and Facebook Page Plugin.",
     "keywords": [
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/humhub-contrib/auth-facebook",
     "humhub": {
         "minVersion": "1.6"
