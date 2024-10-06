@@ -3,4 +3,4 @@
 - HumHub licences at: https://www.humhub.com/licences
 
 
-©2018 Google LLC All rights reserved. Google and the Google logo are registered trademarks of Google LLC.
+©2021 Meta Platforms, Inc All rights reserved. Facebook and the Facebook logo are registered trademarks of the Meta Platforms, Inc.
