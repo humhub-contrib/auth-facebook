@@ -23,6 +23,17 @@ class Module extends \humhub\components\Module
         return Url::to(['/auth-facebook/admin']);
     }
 
+    public function getFacebookUrl()
+    {
+        $url = $this->settings->get('facebookUrl');
+
+        if (empty($url) || strpos($url, 'facebook.com') === false) {
+            return null;
+        }
+
+        return $url;
+    }
+
     /**
      * @inheritdoc
      */

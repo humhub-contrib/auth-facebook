@@ -32,13 +32,15 @@ class ConfigureForm extends Model
      */
     public $redirectUri;
 
+    public $facebookUrl;
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['clientId', 'clientSecret'], 'required'],
+            [['clientId', 'clientSecret', 'facebookUrl'], 'string'],
             [['enabled'], 'boolean'],
         ];
     }
@@ -52,6 +54,7 @@ class ConfigureForm extends Model
             'enabled' => Yii::t('AuthFacebookModule.base', 'Enabled'),
             'clientId' => Yii::t('AuthFacebookModule.base', 'Client ID'),
             'clientSecret' => Yii::t('AuthFacebookModule.base', 'Client secret'),
+            'facebookUrl' => Yii::t('AuthFacebookModule.base', 'Facebook URL:'),
         ];
     }
 
@@ -77,6 +80,7 @@ class ConfigureForm extends Model
         $this->enabled = (boolean)$settings->get('enabled');
         $this->clientId = $settings->get('clientId');
         $this->clientSecret = $settings->get('clientSecret');
+        $this->facebookUrl = $settings->get('facebookUrl');
 
         $this->redirectUri = Url::to(['/user/auth/external', 'authclient' => 'facebook'], true);
     }
@@ -92,6 +96,7 @@ class ConfigureForm extends Model
         $module->settings->set('enabled', (boolean)$this->enabled);
         $module->settings->set('clientId', $this->clientId);
         $module->settings->set('clientSecret', $this->clientSecret);
+        $module->settings->set('facebookUrl', $this->facebookUrl);
 
         return true;
     }

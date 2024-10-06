@@ -18,29 +18,23 @@ use yii\helpers\Url;
         <div class="panel-body">
             <p>
                 <?= Button::asLink(Icon::get('cog'))
-                ->link(Url::to(['widget']))
+                ->link(Url::to(['index']))
                 ->cssClass('pull-right btn btn-default')
-                ->tooltip(Yii::t('AuthFacebookModule.base', 'Widget Settings')) ?>
+                ->tooltip(Yii::t('AuthFacebookModule.base', 'OAuth Settings')) ?>
                 <?= Button::asLink(Icon::get('facebook'))
-                ->link('https://developers.facebook.com/docs/facebook-login/overview')
+                ->link('https://developers.facebook.com/docs/plugins/page-plugin/')
                 ->cssClass('pull-right btn btn-default')
                 ->options(['target' => '_blank'])
                 ->tooltip(Yii::t('AuthFacebookModule.base', 'Facebook Documentation')) ?>
-                <?= Yii::t('AuthFacebookModule.base', 'Please follow the Facebook instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
+                <?= Yii::t('AuthFacebookModule.base', 'Please see Facebook Docs for better understanding of the Facebook Page Plugin.'); ?>
                 <br/>
             </p>
             <br/>
 
             <?php $form = ActiveForm::begin(['id' => 'configure-form', 'enableClientValidation' => false, 'enableClientScript' => false]); ?>
 
-            <?= $form->field($model, 'enabled')->checkbox(); ?>
-
-            <br/>
-            <?= $form->field($model, 'clientId'); ?>
-            <?= $form->field($model, 'clientSecret'); ?>
-
             <br />
-            <?= $form->field($model, 'redirectUri')->textInput(['readonly' => true]); ?>
+            <?= $form->field($model, 'facebookUrl')->textInput(); ?>
             <br/>
 
             <div class="form-group">

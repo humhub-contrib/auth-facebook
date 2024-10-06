@@ -28,4 +28,20 @@ class AdminController extends Controller
         return $this->render('index', ['model' => $model]);
     }
 
+    /**
+     * Render admin only page
+     *
+     * @return string
+     */
+    public function actionWidget()
+    {
+        $model = ConfigureForm::getInstance();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->saveSettings()) {
+            $this->view->saved();
+        }
+
+        return $this->render('widget', ['model' => $model]);
+    }
+
 }

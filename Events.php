@@ -26,4 +26,8 @@ class Events
         }
     }
 
+    public static function addFacebookFrame($event)
+    {
+        $event->sender->addWidget(widgets\FacebookFrame::class, [], []);
+    }
 }
