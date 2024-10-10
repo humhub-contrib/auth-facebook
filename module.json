@@ -6,6 +6,7 @@
     ],
     "version": "1.0.1",
     "homepage": "https://github.com/humhub-contrib/auth-facebook",
+    "screenshots": ["resources/Screenshot_1.jpg"]
     "humhub": {
         "minVersion": "1.6"
     }
