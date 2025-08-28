@@ -7,6 +7,6 @@ return [
     'class' => 'humhubContrib\auth\facebook\Module',
     'namespace' => 'humhubContrib\auth\facebook',
     'events' => [
-        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\facebook\Events', 'onAuthClientCollectionInit']]
+        [Collection::class, Collection::EVENT_AFTER_CLIENTS_SET, ['humhubContrib\auth\facebook\Events', 'onAuthClientCollectionInit']],
     ],
 ];
