@@ -11,7 +11,6 @@ use yii\web\NotFoundHttpException;
  */
 class FacebookAuth extends Facebook
 {
-
     /**
      * @inheritdoc
      */
