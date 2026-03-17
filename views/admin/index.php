@@ -17,7 +17,7 @@ use yii\helpers\Html;
             <p>
                 <?= Link::primary(Yii::t('AuthFacebookModule.base', 'Facebook Documentation'))
                     ->link('https://developers.facebook.com/docs/facebook-login/overview')
-                    ->blank()
+                    ->blank()->loader(false)
                     ->right()->sm() ?>
                 <?= Yii::t('AuthFacebookModule.base', 'Please follow the Facebook instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
