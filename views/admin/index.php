@@ -2,6 +2,8 @@
 /* @var $this \humhub\components\View */
 /* @var $model \humhubContrib\auth\facebook\models\ConfigureForm */
 
+use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use humhub\widgets\form\ActiveForm;
 use yii\helpers\Html;
 
@@ -13,7 +15,10 @@ use yii\helpers\Html;
 
         <div class="panel-body">
             <p>
-                <?= Html::a(Yii::t('AuthFacebookModule.base', 'Facebook Documentation'), 'https://developers.facebook.com/docs/facebook-login/overview', ['class' => 'btn btn-primary float-end btn-sm', 'target' => '_blank']); ?>
+                <?= Link::primary(Yii::t('AuthFacebookModule.base', 'Facebook Documentation'))
+                    ->link('https://developers.facebook.com/docs/facebook-login/overview')
+                    ->blank()
+                    ->right()->sm() ?>
                 <?= Yii::t('AuthFacebookModule.base', 'Please follow the Facebook instructions to create the required <strong>OAuth client</strong> credentials.'); ?>
                 <br/>
             </p>
@@ -31,9 +36,7 @@ use yii\helpers\Html;
             <?= $form->field($model, 'redirectUri')->textInput(['readonly' => true]); ?>
             <br/>
 
-            <div class="mb-3">
-                <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
-            </div>
+            <?= Button::save()->submit() ?>
 
             <?php ActiveForm::end(); ?>
 
