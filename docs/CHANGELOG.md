@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.1 (Unreleased)
+-----------------------
+- Fix #12: Use bootstrap class to build button and link
+
 1.1.0 (August 28, 2025)
 -----------------------
 - Enh #9: Migration to Bootstrap 5 for HumHub 1.18
