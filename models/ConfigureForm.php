@@ -2,10 +2,10 @@
 
 namespace humhubContrib\auth\facebook\models;
 
+use humhubContrib\auth\facebook\Module;
 use Yii;
 use yii\base\Model;
 use yii\helpers\Url;
-use humhubContrib\auth\facebook\Module;
 
 /**
  * The module configuration model
@@ -38,7 +38,7 @@ class ConfigureForm extends Model
     public function rules()
     {
         return [
-            [['clientId', 'clientSecret'], 'required'],
+            [['clientId', 'clientSecret'], 'required', 'when' => fn() => (bool)$this->enabled],
             [['enabled'], 'boolean'],
         ];
     }

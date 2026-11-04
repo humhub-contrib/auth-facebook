@@ -5,11 +5,11 @@ A new button "Facebook" will appear on the login page.
 
 ## Configuration
 
-Please follow the [Facebook instructions](https://www.loginradius.com/blog/async/login-with-facebook/) to create the required ` OAuth client ID` credentials.
+Please follow the [Facebook instructions](https://developers.facebook.com/docs/facebook-login/overview) to create a Facebook app with the **Facebook Login** product and get its `App ID` and `App Secret`.
 
-Once you have the **Client ID** and **Client Secret** created there, the values must then be entered in the module configuration at: `Administration -> Modules -> Facebook Auth -> Configure`. 
-This page also displays the `Authorized redirect URI`, which must be inserted in Facebook in the corresponding field.
+Enter the **App ID** as **Client ID** and the **App Secret** as **Client secret** in the module configuration at: `Administration -> Modules -> Facebook Sign-In -> Configure`.
+This page also displays the `Redirect URI`, which must be added in Facebook as a `Valid OAuth Redirect URI`.
 
 ## Requirements
-- PHP 7.4+
+- PHP 8.2+
 - `allow_url_fopen` **MUST** be enabled.
