@@ -2,9 +2,9 @@
 
 namespace humhubContrib\auth\facebook\controllers;
 
-use Yii;
 use humhub\modules\admin\components\Controller;
 use humhubContrib\auth\facebook\models\ConfigureForm;
+use Yii;
 
 /**
  * Module configuation

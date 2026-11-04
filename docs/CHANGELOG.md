@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.2 (Unreleased)
+--------------------
+- Fix #13: Invalid username and empty first and last name when registering with Facebook; Allow clearing disabled settings
+
 1.1.1 (July 8, 2026)
 --------------------
 - Fix #12: Use bootstrap class to build button and link

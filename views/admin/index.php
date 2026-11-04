@@ -5,7 +5,6 @@
 use humhub\widgets\bootstrap\Button;
 use humhub\widgets\bootstrap\Link;
 use humhub\widgets\form\ActiveForm;
-use yii\helpers\Html;
 
 ?>
 <div class="container-fluid">
