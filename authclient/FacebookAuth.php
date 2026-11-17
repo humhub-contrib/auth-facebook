@@ -45,7 +45,7 @@ class FacebookAuth extends Facebook
         return [
             'popupWidth' => 860,
             'popupHeight' => 480,
-            'cssIcon' => 'fa fa-facebook',
+            'cssIcon' => 'ti ti-brand-facebook',
             'buttonBackgroundColor' => '#e0492f',
         ];
     }

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2.0 (Unreleased)
+--------------------
+- Enh: Update for HumHub 1.20 (Tabler icon for the Facebook login button)
+
 1.1.2 (Unreleased)
 --------------------
 - Fix #13: Invalid username and empty first and last name when registering with Facebook; Allow clearing disabled settings
